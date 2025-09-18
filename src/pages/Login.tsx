@@ -10,12 +10,14 @@ export default function Login() {
   const navigate = useNavigate();
 
   const handleLogin = async (e: React.FormEvent) => {
-    e.preventDefault();
+  e.preventDefault();
+  setError(""); // Clear previous errors
 
-    const res = await fetch("http://127.0.0.1:8000/api/login/", {
+  try {
+    const res = await fetch("https://migrant-care-backend.onrender.com/api/login/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ username, password, role })
+      body: JSON.stringify({ username, password, role }),
     });
 
     const data = await res.json();
@@ -23,12 +25,16 @@ export default function Login() {
     if (res.ok) {
       localStorage.setItem("authToken", data.token);
       navigate(`/${data.role}/dashboard`, {
-  state: { username: data.username }
-});
+        state: { username: data.username },
+      });
     } else {
       setError(data.message || "Login failed. Please try again.");
     }
-  };
+  } catch (err) {
+    setError("Unable to connect to server. Please check your network or try again later.");
+    console.error("Login error:", err);
+  }
+};
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-600 to-purple-700 flex items-center justify-center px-4">
