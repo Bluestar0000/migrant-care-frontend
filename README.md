@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+# MigrantCare Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A role-based healthcare platform built for migrant workers, enabling QR-based patient identification, AI-assisted health recommendations, and real-time outbreak monitoring across regions.
 
-## Available Scripts
+## Live Deployment
+- Frontend: https://migrant-care-frontend.vercel.app
+- Backend API: https://migrant-care-backend.onrender.com
 
-In the project directory, you can run:
+## Overview
 
-### `npm start`
+MigrantCare addresses healthcare accessibility challenges faced by migrant workers, particularly in situations involving language barriers, lack of medical history, and emergency identification. The platform provides three role-specific dashboards tailored to patient, clinical, and administrative workflows.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Role-Based Dashboards
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**Patient Dashboard**
+Patients receive a unique QR health card encoding their migrant ID. The card displays blood group and preferred language for emergency situations, along with emergency contact information. Patients can enter symptoms and receive rule-based health recommendations with guidance on home care, doctor visits, and precautions.
 
-### `npm test`
+**Doctor Dashboard**
+Doctors look up patients by scanning or entering a QR/migrant ID. Patient details are returned instantly — name, age, blood group, language, home hospital, and emergency contact — designed for use in low-connectivity and language-barrier situations.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Authority Dashboard**
+Government and health authority users see aggregated outbreak data with color-coded risk levels per disease and region. A one-click alert system allows authorities to dispatch region-specific outbreak notifications. Summary metrics include total registered migrants, scheme eligibility counts, and AI-generated health alerts.
 
-### `npm run build`
+## Tech Stack
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+| Layer | Technology |
+|---|---|
+| Frontend | React.js, React Router v6 |
+| Backend | Django REST Framework |
+| Database | MongoDB Atlas (MongoEngine) + SQLite |
+| Authentication | DRF Token Authentication |
+| Deployment | Vercel (frontend), Render (backend) |
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Getting Started
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Prerequisites:** Node.js 16+, npm
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+git clone https://github.com/Bluestar0000/migrant-care-frontend.git
+cd migrant-care-frontend
+npm install
+npm start
